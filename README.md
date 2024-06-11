@@ -1,2 +1,5 @@
 # memo
-TypeScript + React + ASP.NET Core　＋ Tailwind CSS勉強用
+- TypeScript
+- React
+- ASP.NET Core
+- Tailwind CSS(shadcn/ui)
