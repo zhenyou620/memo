@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import MemoForm from './components/MemoForm';
+import MemoInput from './components/ui/MemoInput';
 
 const App: FC = () => {
-    return <MemoForm></MemoForm>;
+  return <MemoInput></MemoInput>;
 };
 
 export default App;

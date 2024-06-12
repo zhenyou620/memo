@@ -1,31 +1,31 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormField, Form, FormItem, FormControl } from './ui/form';
 
 interface FormData {
-  Id: string;
+  Id: number;
   Description: string;
 }
 
-const url = 'api/memos';
-
 const MemoForm: FC = () => {
+  const [id, setId] = useState(0);
+  const [description, setDescription] = useState('');
+
   const form = useForm<FormData>({
     defaultValues: {
-      Id: '',
+      Id: 0,
       Description: '',
     },
   });
 
-  const onSubmit: SubmitHandler<FormData> = async (formData) => {
-    const id = new Date().toString();
+  const onSubmit: SubmitHandler<FormData> = async () => {
+    setId(Math.floor(Math.random() * 1000));
+    // setDescription(formData.Description);
     const memo: FormData = {
       Id: id,
-      Description: formData.Description,
+      Description: description,
     };
-
-    console.log(memo);
 
     const response = await fetch('api/memos', {
       method: 'POST',
@@ -35,7 +35,11 @@ const MemoForm: FC = () => {
       },
       body: JSON.stringify(memo),
     });
+
     console.log(response);
+
+    setId(0);
+    setDescription('');
   };
 
   return (
