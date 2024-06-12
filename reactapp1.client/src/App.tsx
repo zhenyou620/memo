@@ -1,25 +1,13 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import MemoInput from './components/ui/MemoInput';
-import MemoCard from './components/MemoCard';
-import getMemo from './utils/getMemo';
-import MemoDataType from './types/MemoDataType';
+import MemoCards from './features/MemoCards';
 
 const App: FC = () => {
-  const [memos, setMemos] = useState<MemoDataType[]>([]);
-  useEffect(() => {
-    const fetchMemos = async () => {
-      const fetchedMemos = await getMemo();
-      setMemos(fetchedMemos);
-    };
-
-    fetchMemos();
-  }, []);
-
   return (
-    <>
+    <div className="mx-8">
       <MemoInput></MemoInput>
-      <MemoCard memos={memos}></MemoCard>
-    </>
+      <MemoCards></MemoCards>
+    </div>
   );
 };
 

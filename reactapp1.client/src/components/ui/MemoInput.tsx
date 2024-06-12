@@ -23,7 +23,6 @@ const MemoInput: FC = () => {
     });
 
     console.log(response);
-
     setDescription('');
   };
 
@@ -35,6 +34,7 @@ const MemoInput: FC = () => {
       onBlur={() => {
         description !== '' && handleSubmit();
       }}
+      className="w-96 my-4 mx-auto"
     />
   );
 };

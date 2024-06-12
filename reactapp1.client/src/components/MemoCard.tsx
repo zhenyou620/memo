@@ -10,7 +10,7 @@ const MemoCard: FC<Props> = ({ memos }) => {
   return (
     <>
       {memos.map((memo) => (
-        <Card key={memo.id}>
+        <Card key={memo.id} className="w-56 pt-6">
           <CardContent>
             <p>{memo.description}</p>
           </CardContent>
