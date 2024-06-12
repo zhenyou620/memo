@@ -1,10 +1,6 @@
 import { FC, useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
-
-interface FormData {
-  Id: number;
-  Description: string;
-}
+import MemoDataType from '@/types/MemoDataType';
 
 const MemoInput: FC = () => {
   const [description, setDescription] = useState('');
@@ -12,12 +8,12 @@ const MemoInput: FC = () => {
   const handleSubmit = async () => {
     const newId = Math.floor(Math.random() * 10000);
 
-    const memo: FormData = {
-      Id: newId,
-      Description: description,
+    const memo: MemoDataType = {
+      id: newId,
+      description: description,
     };
 
-    const response = await fetch('api/memos', {
+    const response = await fetch('api/Memos', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
