@@ -12,7 +12,9 @@ const MemoCard: FC<Props> = ({ memos }) => {
       {memos.map((memo) => (
         <Card key={memo.id} className="w-56 pt-6">
           <CardContent>
-            <p>{memo.description}</p>
+            <p className="break-all text-ellipsis line-clamp-3">
+              {memo.description}
+            </p>
           </CardContent>
         </Card>
       ))}

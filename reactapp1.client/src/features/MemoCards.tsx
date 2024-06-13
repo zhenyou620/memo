@@ -21,7 +21,7 @@ const MemoCards: FC = () => {
   }, [count]);
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 flex-wrap ">
       <MemoCard memos={memos}></MemoCard>
     </div>
   );
