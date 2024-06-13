@@ -7,7 +7,6 @@ import { MemoState } from '@/stores/memo/reducers';
 
 const MemoCards: FC = () => {
   const [memos, setMemos] = useState<MemoDataType[]>([]);
-
   const count = useSelector<MemoState, number>((state) => state.count);
 
   useEffect(() => {
