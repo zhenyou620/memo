@@ -1,9 +1,14 @@
 import { FC, useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import MemoDataType from '@/types/MemoDataType';
+import { useDispatch } from 'react-redux';
+import { memoSlice } from '@/stores/memo';
 
 const MemoInput: FC = () => {
   const [description, setDescription] = useState('');
+
+  const { added } = memoSlice.actions;
+  const addedDispatch = useDispatch();
 
   const handleSubmit = async () => {
     const newId = Math.floor(Math.random() * 10000);
@@ -21,6 +26,8 @@ const MemoInput: FC = () => {
       },
       body: JSON.stringify(memo),
     });
+
+    addedDispatch(added());
 
     console.log(response);
     setDescription('');

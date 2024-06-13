@@ -2,6 +2,8 @@ import { FC, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormField, Form, FormItem, FormControl } from './ui/form';
+import { useDispatch } from 'react-redux';
+import { memoSlice } from '@/stores/memo';
 
 interface FormData {
   Id: number;
@@ -12,6 +14,9 @@ const MemoForm: FC = () => {
   const [id, setId] = useState(0);
   const [description, setDescription] = useState('');
 
+  const { added } = memoSlice.actions;
+  const addedDispatch = useDispatch();
+
   const form = useForm<FormData>({
     defaultValues: {
       Id: 0,
@@ -21,13 +26,12 @@ const MemoForm: FC = () => {
 
   const onSubmit: SubmitHandler<FormData> = async () => {
     setId(Math.floor(Math.random() * 1000));
-    // setDescription(formData.Description);
     const memo: FormData = {
       Id: id,
       Description: description,
     };
 
-    const response = await fetch('api/memos', {
+    await fetch('api/memos', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -36,7 +40,7 @@ const MemoForm: FC = () => {
       body: JSON.stringify(memo),
     });
 
-    console.log(response);
+    addedDispatch(added());
 
     setId(0);
     setDescription('');
