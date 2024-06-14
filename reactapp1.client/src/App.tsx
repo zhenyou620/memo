@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import MemoInput from './components/ui/MemoInput';
-import MemoCards from './features/MemoCards';
+import MemoCards from './components/MemoCards';
 import Providers from './Providers';
 
 const App: FC = () => {
