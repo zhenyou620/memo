@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import MemoDataType from '@/types/MemoDataType';
+import MemoDataType from '@/fetures/Memo/types/MemoDataType';
 import { Card, CardContent } from '@/components/ui/card';
 
 type Props = {

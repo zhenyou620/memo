@@ -1,7 +1,12 @@
 import { FC, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FormField, Form, FormItem, FormControl } from './ui/form';
+import {
+  FormField,
+  Form,
+  FormItem,
+  FormControl,
+} from '../../../components/ui/form';
 import { useDispatch } from 'react-redux';
 import { memoSlice } from '@/stores/memo';
 

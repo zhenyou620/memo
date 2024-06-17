@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import MemoCard from '@/components/MemoCard';
+import MemoCard from '@/fetures/Memo/components/MemoCard';
 import { useSelector } from 'react-redux';
-import useGetMemo from '@/hooks/useGetMemo';
+import useGetMemo from '../hooks/useGetMemo';
 
-import { MemoState } from '@/stores/memo/reducers';
+import { MemoState } from '../stores/memo';
 
 const MemoCards: FC = () => {
   const count = useSelector<MemoState, number>((state) => state.count);

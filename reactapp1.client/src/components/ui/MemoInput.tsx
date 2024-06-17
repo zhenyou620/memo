@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
-import MemoDataType from '@/types/MemoDataType';
+import MemoDataType from '@/fetures/Memo/types/MemoDataType';
 import { useDispatch } from 'react-redux';
 import { memoSlice } from '@/stores/memo';
 
