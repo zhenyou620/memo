@@ -43,5 +43,7 @@
     <PackageJsonDevdependenciesTailwindcss Condition="$(PackageJsonDevdependenciesTailwindcss) == ''">^3.4.4</PackageJsonDevdependenciesTailwindcss>
     <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">^5.2.2</PackageJsonDevdependenciesTypescript>
     <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">^5.2.0</PackageJsonDevdependenciesVite>
+    <PackageJsonVoltaNode Condition="$(PackageJsonVoltaNode) == ''">22.3.0</PackageJsonVoltaNode>
+    <PackageJsonVoltaNpm Condition="$(PackageJsonVoltaNpm) == ''">10.8.1</PackageJsonVoltaNpm>
   </PropertyGroup>
 </Project>

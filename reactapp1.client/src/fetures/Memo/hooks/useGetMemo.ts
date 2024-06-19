@@ -1,5 +1,5 @@
-import getMemo from '@/utils/getMemo';
-import MemoDataType from '@/fetures/Memo/types/MemoDataType';
+import { getMemo } from '../api/getMemo';
+import MemoDataType from '../types/MemoDataType';
 import { useEffect, useState } from 'react';
 
 const useGetMemo = (count: number): MemoDataType[] => {

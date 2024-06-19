@@ -1,15 +1,13 @@
 import { FC } from 'react';
-import MemoInput from './components/ui/MemoInput';
-import MemoCards from './fetures/Memo/components/MemoCards';
+import { Memo } from './fetures/Memo';
 import Providers from './Providers';
-import { Home } from 'lucide-react';
+import Home from './fetures/Home/components/Home';
 
 const App: FC = () => {
   return (
     <Providers>
       <div className="mx-8">
-        <MemoInput></MemoInput>
-        <MemoCards></MemoCards>
+        <Memo></Memo>
       </div>
     </Providers>
   );

@@ -1,9 +1,13 @@
-const getMemo = async () => {
+import MemoDataType from '../types/MemoDataType';
+
+export const getMemo = async (): Promise<MemoDataType[]> => {
   const response = await fetch('api/Memos', {
     method: 'GET',
   });
-  const gotMemo = await response.json();
-  return gotMemo;
-};
+  const data = await response.json();
+  if (!response.ok) {
+    throw data;
+  }
 
-export default getMemo;
+  return data;
+};

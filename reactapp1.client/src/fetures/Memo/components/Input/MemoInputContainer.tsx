@@ -1,16 +1,20 @@
-import { FC, useState } from 'react';
-import { Textarea } from '@/components/ui/textarea';
+import { ChangeEvent, FC, useState } from 'react';
+import MemoInput from './MemoInput';
 import MemoDataType from '@/fetures/Memo/types/MemoDataType';
 import { useDispatch } from 'react-redux';
-import { memoSlice } from '@/stores/memo';
+import { memoSlice } from '../../stores/memo';
 
-const MemoInput: FC = () => {
+export const MemoInputContainer: FC = () => {
   const [description, setDescription] = useState('');
 
   const { added } = memoSlice.actions;
   const addedDispatch = useDispatch();
 
   const handleSubmit = async () => {
+    if (description == '') {
+      return;
+    }
+
     const newId = Math.floor(Math.random() * 10000);
 
     const memo: MemoDataType = {
@@ -33,17 +37,12 @@ const MemoInput: FC = () => {
     setDescription('');
   };
 
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) =>
+    setDescription(e.target.value);
+
   return (
-    <Textarea
-      placeholder="Type your memo here..."
-      value={description}
-      onChange={(e) => setDescription(e.target.value)}
-      onBlur={() => {
-        description !== '' && handleSubmit();
-      }}
-      className="w-96 my-4 mx-auto"
-    />
+    <>
+      <MemoInput {...{ description, handleChange, handleSubmit }} />;
+    </>
   );
 };
-
-export default MemoInput;
