@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Memo } from './fetures/Memo';
-import Providers from './Providers';
+import Providers from './providers/Providers';
 import Home from './fetures/Home/components/Home';
 
 const App: FC = () => {

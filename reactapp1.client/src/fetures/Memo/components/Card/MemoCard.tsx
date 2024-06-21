@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import MemoDataType from '../../types/MemoDataType';
+import { Memo } from '../../../types/memo';
 import { Card, CardContent } from '@/components/ui/card';
 
 type Props = {
-  memo: MemoDataType;
+  memo: Memo;
 };
 
 export const MemoCard: FC<Props> = ({ memo }) => {

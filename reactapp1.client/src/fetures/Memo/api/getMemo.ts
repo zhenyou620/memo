@@ -1,6 +1,6 @@
-import MemoDataType from '../types/MemoDataType';
+import { Memos } from '../types/memo';
 
-export const getMemo = async (): Promise<MemoDataType[]> => {
+export const getMemo = async (): Promise<Memos> => {
   const response = await fetch('api/Memos', {
     method: 'GET',
   });

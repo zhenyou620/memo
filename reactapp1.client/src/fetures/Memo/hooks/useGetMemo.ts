@@ -1,20 +1,35 @@
 import { getMemo } from '../api/getMemo';
-import MemoDataType from '../types/MemoDataType';
-import { useEffect, useState } from 'react';
+import { Memos } from '../types/memo';
+import { useState, useEffect } from 'react';
 
-const useGetMemo = (count: number): MemoDataType[] => {
-  const [memo, setMemo] = useState<MemoDataType[]>([]);
+// const useGetMemo = (count: number): Memos => {
+//   const [memo, setMemo] = useState<Memos>([]);
+
+//   useEffect(() => {
+//     const fetchMemos = async () => {
+//       const fetchedMemos = await getMemo();
+//       setMemo(fetchedMemos);
+//     };
+
+//     void fetchMemos();
+//   }, [count]);
+
+//   return memo;
+// };
+
+const useGetMemo = (memo: Memos): Memos => {
+  const [data, setData] = useState<Memos>([]);
 
   useEffect(() => {
     const fetchMemos = async () => {
       const fetchedMemos = await getMemo();
-      setMemo(fetchedMemos);
+      setData(fetchedMemos);
     };
 
     void fetchMemos();
-  }, [count]);
+  }, [memo]);
 
-  return memo;
+  return data;
 };
 
 export default useGetMemo;
