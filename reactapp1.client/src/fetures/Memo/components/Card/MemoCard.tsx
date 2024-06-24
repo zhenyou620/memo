@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Memo } from '../../../types/memo';
+import { Memo } from '../../types/memo';
 import { Card, CardContent } from '@/components/ui/card';
 
 type Props = {

@@ -7,7 +7,7 @@ type Props = {
   handleSubmit: () => void;
 };
 
-const MemoInput: FC<Props> = ({
+export const MemoInput: FC<Props> = ({
   description = '',
   handleChange = () => undefined,
   handleSubmit = () => undefined,
@@ -22,5 +22,3 @@ const MemoInput: FC<Props> = ({
     />
   );
 };
-
-export default MemoInput;

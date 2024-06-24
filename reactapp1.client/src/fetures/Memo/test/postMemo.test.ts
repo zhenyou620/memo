@@ -1,6 +1,6 @@
 import * as postMemo from '../api/postMemo';
 import { Memo } from '../types/memo';
-import { httpError, postMemoData } from './fixtures';
+import { httpError, MemoData } from './fixtures';
 
 jest.mock('../api/postMemo');
 
@@ -20,7 +20,7 @@ const mockPostMemo = (input: Memo, status = 200) => {
     checkLength(input.description);
     return jest
       .spyOn(postMemo, 'postMemo')
-      .mockResolvedValue({ ...postMemoData, ...input });
+      .mockResolvedValue({ ...MemoData, ...input });
   } catch (error) {
     return jest.spyOn(postMemo, 'postMemo').mockRejectedValueOnce(httpError);
   }

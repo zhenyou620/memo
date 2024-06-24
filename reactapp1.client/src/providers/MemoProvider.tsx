@@ -1,6 +1,6 @@
 import { FC, useState, PropsWithChildren } from 'react';
-import { Memos } from '../types/memo';
-import { MemoContext } from '../stores/memoContext';
+import { Memos } from '../fetures/Memo/types/memo';
+import { MemoContext } from '../fetures/Memo/stores/memoContext';
 
 export const MemoProvider: FC<PropsWithChildren> = ({ children }) => {
   const [memo, setMemo] = useState<Memos>([]);

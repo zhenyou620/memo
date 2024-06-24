@@ -1,15 +1,15 @@
 import { FC } from 'react';
 import { Memo } from './fetures/Memo';
-import Providers from './providers/Providers';
 import Home from './fetures/Home/components/Home';
+import { MemoProvider } from './providers/MemoProvider';
 
 const App: FC = () => {
   return (
-    <Providers>
+    <MemoProvider>
       <div className="mx-8">
         <Memo></Memo>
       </div>
-    </Providers>
+    </MemoProvider>
   );
 };
 
