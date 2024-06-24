@@ -18,9 +18,14 @@ test('データ取得成功時、すべてのメモが返る', async () => {
 
 test('データ取得失敗時、エラーを返す', async () => {
   mockGetMemo(500);
-  await getMemo.getMemo().catch((err: Error) => {
-    expect(err).toMatchObject({
+  let error;
+  try {
+    await getMemo.getMemo();
+  } catch (err) {
+    error = err;
+  } finally {
+    expect(error).toMatchObject({
       err: { message: 'internal server error' },
     });
-  });
+  }
 });
