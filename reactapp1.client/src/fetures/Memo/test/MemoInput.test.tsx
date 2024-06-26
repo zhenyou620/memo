@@ -1,6 +1,13 @@
-// import { render } from '@testing-library/react';
-// import { <MemoInput></MemoInput> } from '../components/Input/MemoInput';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { MemoInput } from '../components/Input/MemoInput';
 
-// test('Inputの表示', () => {
-//   render(<Input></Input>);
-// });
+const user = userEvent.setup();
+const props = {
+    
+}
+
+test(', async () => {
+  render(<MemoInput {}></MemoInput>)
+  
+});

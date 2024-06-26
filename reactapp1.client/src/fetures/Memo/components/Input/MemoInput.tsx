@@ -19,6 +19,7 @@ export const MemoInput: FC<Props> = ({
       onChange={handleChange}
       onBlur={handleSubmit}
       className="w-96 my-4 mx-auto"
+      id="MemoInput"
     />
   );
 };
