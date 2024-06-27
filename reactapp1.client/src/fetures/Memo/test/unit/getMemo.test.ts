@@ -1,4 +1,4 @@
-import * as getMemo from '../api/getMemo';
+import * as getMemo from '../../api/getMemo';
 import { httpError, MemoData } from './fixtures';
 
 jest.mock('../api/getMemo');

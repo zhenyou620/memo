@@ -1,4 +1,5 @@
-import { Memos } from '../types/memo';
+import { Memos } from '../../types/memo';
+import type { Result } from '../../types/result';
 
 export type HttpError = {
   err: { message: string };
@@ -6,6 +7,10 @@ export type HttpError = {
 
 export const httpError: HttpError = {
   err: { message: 'internal server error' },
+};
+
+export const postMemoMock: Result = {
+  result: 'ok',
 };
 
 export const MemoData: Memos = [

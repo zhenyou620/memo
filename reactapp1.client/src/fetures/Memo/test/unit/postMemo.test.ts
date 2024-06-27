@@ -1,5 +1,5 @@
-import * as postMemo from '../api/postMemo';
-import { Memo } from '../types/memo';
+import * as postMemo from '../../api/postMemo';
+import { Memo } from '../../types/memo';
 import { httpError, MemoData } from './fixtures';
 
 jest.mock('../api/postMemo');
