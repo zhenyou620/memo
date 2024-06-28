@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent, useEffect , useContext } from 'react';
+import { FC, useState, ChangeEvent, useEffect, useContext } from 'react';
 import { getMemo } from './api/getMemo';
 import { postMemo } from './api/postMemo';
 import { MemoCard } from './components/Card/MemoCard';
@@ -12,7 +12,7 @@ export const Memo: FC = () => {
   const [description, setDescription] = useState('');
 
   const handleSubmit = async () => {
-    postMemo(description);
+    void postMemo(description);
     setDescription('');
     const data = await getMemo();
     updateMemo(data);
@@ -27,7 +27,7 @@ export const Memo: FC = () => {
       updateMemo(data);
     };
 
-    fetchMemo();
+    void fetchMemo();
   }, [updateMemo]);
 
   return (
