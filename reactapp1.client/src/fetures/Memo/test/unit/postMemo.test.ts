@@ -18,6 +18,7 @@ const mockPostMemo = (input: Memo, status = 200) => {
   }
   try {
     checkLength(input.description);
+
     return jest
       .spyOn(postMemo, 'postMemo')
       .mockResolvedValue({ ...MemoData, ...input });

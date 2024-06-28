@@ -1,7 +1,7 @@
 import { Memo } from '../types/memo';
 
 export const postMemo = async (description: string) => {
-  if (description == '') {
+  if (description === '') {
     throw new Error('1文字以上入力してください');
   }
 
@@ -9,7 +9,7 @@ export const postMemo = async (description: string) => {
 
   const memo: Memo = {
     id: newId,
-    description: description,
+    description,
   };
 
   const response = await fetch('api/Memos', {

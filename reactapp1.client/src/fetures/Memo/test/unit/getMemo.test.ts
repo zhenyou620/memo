@@ -7,6 +7,7 @@ const mockGetMemo = (status = 200) => {
   if (status > 299) {
     return jest.spyOn(getMemo, 'getMemo').mockRejectedValueOnce(httpError);
   }
+
   return jest.spyOn(getMemo, 'getMemo').mockResolvedValueOnce(MemoData);
 };
 

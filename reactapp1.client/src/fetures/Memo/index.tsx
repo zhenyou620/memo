@@ -1,11 +1,11 @@
-import { FC, useState, ChangeEvent, useEffect } from 'react';
-import { MemoCard } from './components/Card/MemoCard';
-import { useContext } from 'react';
-import { MemoContext } from '@/fetures/Memo/stores/memoContext';
-import { MemoInput } from './components/Input/MemoInput';
-import { postMemo } from './api/postMemo';
+import { FC, useState, ChangeEvent, useEffect , useContext } from 'react';
 import { getMemo } from './api/getMemo';
+import { postMemo } from './api/postMemo';
+import { MemoCard } from './components/Card/MemoCard';
+
+import { MemoInput } from './components/Input/MemoInput';
 import { Message } from './components/Message/Message';
+import { MemoContext } from '@/fetures/Memo/stores/memoContext';
 
 export const Memo: FC = () => {
   const { memo, updateMemo } = useContext(MemoContext);

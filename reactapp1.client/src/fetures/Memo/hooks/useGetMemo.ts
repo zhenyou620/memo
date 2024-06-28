@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { getMemo } from '../api/getMemo';
 import { Memos } from '../types/memo';
-import { useState, useEffect } from 'react';
 
 // const useGetMemo = (count: number): Memos => {
 //   const [memo, setMemo] = useState<Memos>([]);

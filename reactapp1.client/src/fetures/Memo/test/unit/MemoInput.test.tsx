@@ -1,10 +1,8 @@
-import { Memo } from '../../types/memo';
-import { httpError, MemoData } from './fixtures';
-import * as postMemo from '../../api/postMemo';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import * as postMemo from '../../api/postMemo';
 import { MemoInput } from '../../components/Input/MemoInput';
-import { postMemoMock } from './fixtures';
+import { httpError, postMemoMock } from './fixtures';
 
 const user = userEvent.setup();
 
@@ -35,17 +33,19 @@ const inputMemo = async (inputValue = { description: 'UItest' }) => {
     screen.getByPlaceholderText('メモを入力...'),
     inputValue.description,
   );
+
   return inputValue;
 };
 
-const submitMemo = async () => {
+const submitMemo = () => {
   fireEvent.blur(screen.getByRole('paragraph', { name: 'MemoInput' }));
 };
 
 const fillValueAndSubmit = async () => {
   const memo = await inputMemo();
   const submitValue = { ...memo };
-  await submitMemo();
+  submitMemo();
+
   return submitValue;
 };
 
