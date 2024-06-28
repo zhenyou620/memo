@@ -12,7 +12,7 @@ export const Memo: FC = () => {
   const [description, setDescription] = useState('');
 
   const handleSubmit = async () => {
-    void postMemo(description);
+    postMemo(description);
     setDescription('');
     const data = await getMemo();
     updateMemo(data);
