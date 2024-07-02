@@ -1,6 +1,6 @@
 import { Memo } from '../types/memo';
 
-export const postMemo = async (description: string) => {
+export const postMemo = async (description: string): Promise<void> => {
   if (description === '') {
     throw new Error('1文字以上入力してください');
   }
@@ -21,9 +21,8 @@ export const postMemo = async (description: string) => {
     body: JSON.stringify(memo),
   });
 
-  const data = await response.json();
-
-  if (!data.ok) {
-    throw data;
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message);
   }
 };

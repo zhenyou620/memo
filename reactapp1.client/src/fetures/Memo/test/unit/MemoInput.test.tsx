@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as postMemo from '../../api/postMemo';
 import { MemoInput } from '../../components/Input/MemoInput';
-import { httpError, postMemoMock } from './fixtures';
+import { httpError } from './fixtures';
 
 const user = userEvent.setup();
 
@@ -22,7 +22,7 @@ const mockPostMemo = (status = 200) => {
   }
   try {
     // checkLength(input.description);
-    return jest.spyOn(postMemo, 'postMemo').mockResolvedValue(postMemoMock);
+    return jest.spyOn(postMemo, 'postMemo').mockResolvedValue();
   } catch (error) {
     return jest.spyOn(postMemo, 'postMemo').mockRejectedValueOnce(httpError);
   }
