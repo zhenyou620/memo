@@ -1,1 +1,0 @@
-cd reactapp.1client && npm run lint-staged

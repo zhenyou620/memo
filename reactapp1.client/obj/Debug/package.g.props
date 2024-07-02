@@ -13,7 +13,6 @@
     <PackageJsonScriptsFix Condition="$(PackageJsonScriptsFix) == ''">npm run --silent format; npm run --silent lint:fix</PackageJsonScriptsFix>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
     <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">jest</PackageJsonScriptsTest>
-    <PackageJsonScriptsPrepare Condition="$(PackageJsonScriptsPrepare) == ''">cd .. &amp;&amp; husky reactapp.1client/.husky</PackageJsonScriptsPrepare>
     <PackageJsonDependenciesHookformResolvers Condition="$(PackageJsonDependenciesHookformResolvers) == ''">^3.6.0</PackageJsonDependenciesHookformResolvers>
     <PackageJsonDependenciesRadixUiReactLabel Condition="$(PackageJsonDependenciesRadixUiReactLabel) == ''">^2.0.2</PackageJsonDependenciesRadixUiReactLabel>
     <PackageJsonDependenciesRadixUiReactSlot Condition="$(PackageJsonDependenciesRadixUiReactSlot) == ''">^1.0.2</PackageJsonDependenciesRadixUiReactSlot>
@@ -51,12 +50,11 @@
     <PackageJsonDevdependenciesEslintPluginPromise Condition="$(PackageJsonDevdependenciesEslintPluginPromise) == ''">^6.2.0</PackageJsonDevdependenciesEslintPluginPromise>
     <PackageJsonDevdependenciesEslintPluginReact Condition="$(PackageJsonDevdependenciesEslintPluginReact) == ''">^7.34.3</PackageJsonDevdependenciesEslintPluginReact>
     <PackageJsonDevdependenciesEslintPluginReactHooks Condition="$(PackageJsonDevdependenciesEslintPluginReactHooks) == ''">^4.6.2</PackageJsonDevdependenciesEslintPluginReactHooks>
-    <PackageJsonDevdependenciesHusky Condition="$(PackageJsonDevdependenciesHusky) == ''">^9.0.11</PackageJsonDevdependenciesHusky>
     <PackageJsonDevdependenciesJest Condition="$(PackageJsonDevdependenciesJest) == ''">^29.7.0</PackageJsonDevdependenciesJest>
     <PackageJsonDevdependenciesLintStaged Condition="$(PackageJsonDevdependenciesLintStaged) == ''">^15.2.7</PackageJsonDevdependenciesLintStaged>
     <PackageJsonDevdependenciesPostcss Condition="$(PackageJsonDevdependenciesPostcss) == ''">^8.4.38</PackageJsonDevdependenciesPostcss>
     <PackageJsonDevdependenciesPrettier Condition="$(PackageJsonDevdependenciesPrettier) == ''">^3.3.2</PackageJsonDevdependenciesPrettier>
-    <PackageJsonDevdependenciesPrettierPluginTailwindcss Condition="$(PackageJsonDevdependenciesPrettierPluginTailwindcss) == ''">^0.6.2</PackageJsonDevdependenciesPrettierPluginTailwindcss>
+    <PackageJsonDevdependenciesPrettierPluginTailwindcss Condition="$(PackageJsonDevdependenciesPrettierPluginTailwindcss) == ''">^0.6.5</PackageJsonDevdependenciesPrettierPluginTailwindcss>
     <PackageJsonDevdependenciesTailwindcss Condition="$(PackageJsonDevdependenciesTailwindcss) == ''">^3.4.4</PackageJsonDevdependenciesTailwindcss>
     <PackageJsonDevdependenciesTsJest Condition="$(PackageJsonDevdependenciesTsJest) == ''">^29.1.5</PackageJsonDevdependenciesTsJest>
     <PackageJsonDevdependenciesTsNode Condition="$(PackageJsonDevdependenciesTsNode) == ''">^10.9.2</PackageJsonDevdependenciesTsNode>

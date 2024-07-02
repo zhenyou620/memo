@@ -11,8 +11,7 @@
     "format": "prettier--write--loglevel=warn \"src/**/*.{js,jsx,ts,tsx,html,json,gql,graphql}\"",
     "fix": "npm run --silent format; npm run --silent lint:fix",
     "preview": "vite preview",
-    "test": "jest",
-    "prepare": "cd .. && husky reactapp.1client/.husky"
+    "test": "jest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
@@ -54,12 +53,11 @@
     "eslint-plugin-promise": "^6.2.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "husky": "^9.0.11",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.7",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
