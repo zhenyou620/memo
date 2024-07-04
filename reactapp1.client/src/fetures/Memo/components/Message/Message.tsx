@@ -3,8 +3,8 @@ import { Bulb } from '@/components/Bulb';
 
 export const Message: FC = () => {
   return (
-    <div className="flex flex-col gap-5 mt-40 items-center">
-      <Bulb className="stroke-slate-300 w-40"></Bulb>
+    <div className="mt-40 flex flex-col items-center gap-5">
+      <Bulb className="w-40 stroke-slate-300"></Bulb>
       <p className="text-2xl">追加したメモはここに表示されます。</p>
     </div>
   );

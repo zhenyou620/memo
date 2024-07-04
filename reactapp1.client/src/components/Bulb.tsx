@@ -1,7 +1,7 @@
 import { SVGProps, FC } from 'react';
 type Props = SVGProps<SVGSVGElement>;
 
-export const Bulb: FC = (props: Props) => {
+export const Bulb: FC<Props> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
