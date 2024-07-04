@@ -1,18 +1,30 @@
-import { FC, useState, ChangeEvent, useEffect, useContext } from 'react';
+import {
+  FC,
+  useState,
+  ChangeEvent,
+  useEffect,
+  useContext,
+  useCallback,
+} from 'react';
 import { getMemo } from './api/getMemo';
 import { postMemo } from './api/postMemo';
 import { MemoCard } from './components/Card/MemoCard';
 
 import { MemoInput } from './components/Input/MemoInput';
 import { Message } from './components/Message/Message';
-import { MemoContext } from '@/fetures/Memo/stores/memoContext';
+import { memoContext } from '@/fetures/Memo/stores/memoContext';
 
 export const Memo: FC = () => {
-  const { memo, updateMemo } = useContext(MemoContext);
+  const { memo, updateMemo } = useContext(memoContext);
   const [description, setDescription] = useState('');
 
+  const fetchMemo = useCallback(async () => {
+    const data = await getMemo();
+    updateMemo(data);
+  }, [updateMemo]);
+
   const handleSubmit = async () => {
-    postMemo(description);
+    await postMemo(description);
     setDescription('');
     const data = await getMemo();
     updateMemo(data);
@@ -22,13 +34,9 @@ export const Memo: FC = () => {
     setDescription(e.target.value);
 
   useEffect(() => {
-    const fetchMemo = async () => {
-      const data = await getMemo();
-      updateMemo(data);
-    };
-
+    // eslint-disable-next-line no-void
     void fetchMemo();
-  }, [updateMemo]);
+  }, [fetchMemo]);
 
   return (
     <>

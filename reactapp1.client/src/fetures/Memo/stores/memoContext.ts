@@ -6,4 +6,4 @@ export interface MemoContext {
   updateMemo: (memos: Memos) => void;
 }
 
-export const MemoContext = createContext<MemoContext>({} as never);
+export const memoContext = createContext<MemoContext>({} as never);

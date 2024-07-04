@@ -1,5 +1,5 @@
 import { FC, useState, PropsWithChildren, useCallback } from 'react';
-import { MemoContext } from '../fetures/Memo/stores/memoContext';
+import { memoContext } from '../fetures/Memo/stores/memoContext';
 import { Memos } from '../fetures/Memo/types/memo';
 
 export const MemoProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -12,8 +12,8 @@ export const MemoProvider: FC<PropsWithChildren> = ({ children }) => {
   }, []);
 
   return (
-    <MemoContext.Provider value={{ memo, updateMemo }}>
+    <memoContext.Provider value={{ memo, updateMemo }}>
       {children}
-    </MemoContext.Provider>
+    </memoContext.Provider>
   );
 };
