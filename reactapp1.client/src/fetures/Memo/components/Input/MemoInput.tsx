@@ -9,8 +9,8 @@ type Props = {
 
 export const MemoInput: FC<Props> = ({
   description = '',
-  handleChange = () => undefined,
-  handleSubmit = () => undefined,
+  handleChange,
+  handleSubmit,
 }) => {
   return (
     <Textarea

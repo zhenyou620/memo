@@ -8,11 +8,11 @@ type Props = {
 
 export const MemoCard: FC<Props> = ({ memos }) => {
   return (
-    <div className="flex gap-4 flex-wrap">
+    <div className="flex flex-wrap gap-4">
       {memos.map((memo) => (
         <Card key={memo.id} className="w-56 pt-6">
           <CardContent>
-            <p className="break-all text-ellipsis line-clamp-3">
+            <p className="line-clamp-3 text-ellipsis break-all">
               {memo.description}
             </p>
           </CardContent>

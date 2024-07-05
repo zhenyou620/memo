@@ -2,7 +2,8 @@ import { fn } from '@storybook/test';
 import { MemoInput } from '../components/Input/MemoInput';
 
 export const ActionsData = {
-  onBlurTack: fn(),
+  handleChange: fn(),
+  handleSubmit: fn(),
 };
 
 export default {
@@ -16,7 +17,7 @@ export default {
 
 export const Default = {
   args: {
-    id: '1',
+    id: 1,
     description: 'test',
   },
 };
