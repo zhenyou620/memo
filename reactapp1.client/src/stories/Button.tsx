@@ -1,38 +1,39 @@
+import { FC } from 'react';
 import './button.css';
 
 interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * ページ上で主要な役割をするボタンかどうか
    */
   primary?: boolean;
   /**
-   * What background color to use
+   * ボタンの背景色。
    */
   backgroundColor?: string;
   /**
-   * How large should the button be?
+   * ボタンの大きさ。
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Button contents
+   * ボタンの内容
    */
   label: string;
   /**
-   * Optional click handler
+   * 任意のクリックイベント
    */
   onClick?: () => void;
 }
 
 /**
- * Primary UI component for user interaction
+ * ユーザにアクションを実行してもらうためのコンポーネント
  */
-export const Button = ({
+export const Button: FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
+}) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
