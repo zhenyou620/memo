@@ -1,13 +1,24 @@
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { Meta, StoryObj } from '@storybook/react';
 import { TaskList } from '../components/TaskList';
 import * as TaskStories from '../stories/Task.stories.ts';
 
-export default {
+const meta: Meta<typeof TaskList> = {
   component: TaskList,
   title: 'Task List',
   excludeStories: /.*Data$/,
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  },
 };
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof TaskList>;
+
+export const Default: Story = {
   args: {
     tasks: [
       {
@@ -30,16 +41,27 @@ export const Default = {
   },
 };
 
-export const Loading = {
+export const Loading: Story = {
   args: {
     tasks: [],
     loading: true,
   },
 };
 
-export const Empty = {
+export const Empty: Story = {
   args: {
     ...Loading.args,
     loading: false,
+  },
+};
+
+export const Mobile: Story = {
+  args: {
+    ...Default.args,
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
   },
 };
