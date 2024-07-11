@@ -1,5 +1,5 @@
+import { httpError } from '../../../utils/error';
 import { Memos } from '../types/memo';
-import { httpError } from '../utils/error';
 
 const isMemos = (data: unknown): data is Memos => {
   const memos = data as Memos;

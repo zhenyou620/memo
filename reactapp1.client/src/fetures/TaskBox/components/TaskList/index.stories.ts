@@ -1,16 +1,17 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Meta, StoryObj } from '@storybook/react';
-import { TaskList } from '../components/TaskList';
-import * as TaskStories from '../stories/Task.stories.ts';
+import * as TaskStories from '../Task/index.stories.ts';
+import { TaskList } from './index.tsx';
 
 const meta: Meta<typeof TaskList> = {
   component: TaskList,
   title: 'Task List',
   excludeStories: /.*Data$/,
+  tags: ['autodocs'],
   parameters: {
     viewport: {
       viewports: INITIAL_VIEWPORTS,
-      defaultViewport: 'iphone6',
+      defaultViewport: 'responsive',
     },
   },
 };
@@ -50,18 +51,7 @@ export const Loading: Story = {
 
 export const Empty: Story = {
   args: {
-    ...Loading.args,
+    tasks: [],
     loading: false,
-  },
-};
-
-export const Mobile: Story = {
-  args: {
-    ...Default.args,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'iphonex',
-    },
   },
 };

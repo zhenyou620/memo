@@ -1,9 +1,10 @@
-import { Task } from '../components/Task';
+import { Task } from '.';
 
 export default {
   component: Task,
   title: 'Task',
   excludeStories: /.*Data$/,
+  tags: ['autodocs'],
 };
 
 export const Default = {
