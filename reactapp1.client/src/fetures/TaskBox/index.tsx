@@ -4,6 +4,10 @@ import { TaskList } from './components/TaskList';
 import { Loading } from './components/TaskList/Loading';
 import { Task, Tasks } from './types/Task';
 
+export const sum = (a: number, b: number): number => {
+  return a + b;
+};
+
 export const TaskBox: FC = () => {
   const [fetchedTask, setFechedTask] = useState<Tasks>([]);
 
