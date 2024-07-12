@@ -6,3 +6,6 @@
 - Tailwind CSS(shadcn/ui)
 - Redux
 - StoryBook
+- ~~Jest~~ Vitest
+- React Testing Library
+- Mock Service Worker
