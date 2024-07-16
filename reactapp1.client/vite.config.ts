@@ -3,6 +3,7 @@
 import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
@@ -47,7 +48,7 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [plugin()],
+  plugins: [plugin(), tsconfigPaths()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -66,5 +67,9 @@ export default defineConfig({
       cert: fs.readFileSync(certFilePath),
     },
   },
-  test: { globals: true, environment: 'happy-dom' },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    setupFiles: ['vitest.setup.ts'],
+  },
 });

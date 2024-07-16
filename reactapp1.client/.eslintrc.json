@@ -32,7 +32,8 @@
     "@typescript-eslint",
     "jsx-a11y",
     "react-hooks",
-    "jest"
+    "jest-dom",
+    "testing-library"
   ],
   "rules": {
     "padding-line-between-statements": [
@@ -134,14 +135,12 @@
         "jest/globals": true
       },
       "extends": [
-        "plugin:jest/recommended",
-        "plugin:jest/style"
-      ],
-      "plugins": [
-        "jest"
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
       ]
     }
   ],
+  "ignorePatterns": ["vite.config.ts", "vitest.setup.ts" ],
   "settings": {
     "react": {
       "version": "detect"
