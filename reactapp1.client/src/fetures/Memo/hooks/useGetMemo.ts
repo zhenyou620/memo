@@ -2,21 +2,6 @@ import { useState, useEffect } from 'react';
 import { getMemo } from '../api/getMemo';
 import { Memos } from '../types/memo';
 
-// const useGetMemo = (count: number): Memos => {
-//   const [memo, setMemo] = useState<Memos>([]);
-
-//   useEffect(() => {
-//     const fetchMemos = async () => {
-//       const fetchedMemos = await getMemo();
-//       setMemo(fetchedMemos);
-//     };
-
-//     void fetchMemos();
-//   }, [count]);
-
-//   return memo;
-// };
-
 const useGetMemo = (memo: Memos): Memos => {
   const [data, setData] = useState<Memos>([]);
 
