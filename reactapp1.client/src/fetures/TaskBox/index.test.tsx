@@ -1,6 +1,6 @@
 import { TaskBox } from '.';
 import { render, screen, waitFor } from '@testing-library/react';
-import { http, HttpResponse } from 'msw';
+import { delay, http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 
 const server = setupServer(
@@ -39,5 +39,43 @@ describe('タスク表示', () => {
     render(<TaskBox />);
     const empty = await screen.findByText('タスクはありません。');
     expect(empty).toBeInTheDocument();
+  });
+
+  test('データ取得中にローディング画面が表示される', async () => {
+    server.use(
+      http.get('api/GetTask', async () => {
+        await delay('infinite');
+      }),
+    );
+
+    render(<TaskBox />);
+
+    const loading = await screen.getByRole('status');
+    expect(loading).toBeInTheDocument();
+  });
+
+  test('ローディング画面が表示されたのち、タスク一覧が表示される', async () => {
+    server.use(
+      http.get('api/GetTask', async () => {
+        await delay(1000);
+        return HttpResponse.json([
+          { id: 1, text: 'Task1' },
+          { id: 2, text: 'Task2', isArchived: true },
+          { id: 3, text: 'Task3', isPinned: true },
+          { id: 4, text: 'Task4', isArchived: true, isPinned: true },
+        ]);
+      }),
+    );
+
+    render(<TaskBox />);
+
+    const loading = await screen.getByRole('status');
+    expect(loading).toBeInTheDocument();
+
+    await waitFor(() => screen.getByDisplayValue('Task1'), { timeout: 5000 });
+    expect(screen.getByDisplayValue('Task1')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Task2')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Task3')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Task4')).toBeInTheDocument();
   });
 });

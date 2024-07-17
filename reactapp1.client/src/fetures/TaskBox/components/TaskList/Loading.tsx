@@ -12,7 +12,7 @@ export const LoadingRow = (
 
 export const Loading: FC = () => {
   return (
-    <div>
+    <div role="status" aria-live="polite" aria-busy="true">
       {LoadingRow}
       {LoadingRow}
       {LoadingRow}

@@ -1,19 +1,21 @@
-import { FC, useEffect, useCallback, useState, Suspense } from 'react';
+import { FC, useEffect, useCallback, useState } from 'react';
 import { getTasks } from './api/getTasks';
 import { TaskList } from './components/TaskList';
 import { Loading } from './components/TaskList/Loading';
 import { Task, Tasks } from './types/Task';
 
-export const sum = (a: number, b: number): number => {
-  return a + b;
-};
-
 export const TaskBox: FC = () => {
   const [fetchedTask, setFechedTask] = useState<Tasks>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchTask = useCallback(async () => {
-    const data = await getTasks();
-    setFechedTask(data);
+    try {
+      setIsLoading(true);
+      const data = await getTasks();
+      setFechedTask(data);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -40,12 +42,16 @@ export const TaskBox: FC = () => {
   };
 
   return (
-    <Suspense fallback={<Loading />}>
-      <TaskList
-        tasks={fetchedTask}
-        handleArchived={handleArchived}
-        handlePinned={handlePinned}
-      ></TaskList>
-    </Suspense>
+    <>
+      {isLoading === true ? (
+        <Loading />
+      ) : (
+        <TaskList
+          tasks={fetchedTask}
+          handleArchived={handleArchived}
+          handlePinned={handlePinned}
+        ></TaskList>
+      )}
+    </>
   );
 };
