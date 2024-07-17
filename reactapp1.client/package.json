@@ -12,6 +12,7 @@
     "fix": "npm run --silent format; npm run --silent lint:fix",
     "preview": "vite preview",
     "test": "vitest",
+    "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

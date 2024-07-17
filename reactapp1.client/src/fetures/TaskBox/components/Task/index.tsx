@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Task as TaskType } from '../../types/Task';
+import { TaskType } from '../../types/TaskType';
 
 type Props = {
   /**

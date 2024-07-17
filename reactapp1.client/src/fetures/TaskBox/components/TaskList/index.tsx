@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { Task as TaskType, Tasks } from '../../types/Task';
+import { TaskType, TasksType } from '../../types/TaskType';
 import { Task } from '../Task';
 import { Empty } from './Empty';
 import { Loading } from './Loading';
 
 type Props = {
-  tasks: Tasks;
+  tasks: TasksType;
   handleArchived: (id: TaskType['id']) => void;
   handlePinned: (id: TaskType['id']) => void;
   loading?: boolean;

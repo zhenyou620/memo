@@ -1,11 +1,10 @@
 import { FC, useEffect, useCallback, useState } from 'react';
 import { getTasks } from './api/getTasks';
 import { TaskList } from './components/TaskList';
-import { Loading } from './components/TaskList/Loading';
-import { Task, Tasks } from './types/Task';
+import { TaskType, TasksType } from './types/TaskType';
 
 export const TaskBox: FC = () => {
-  const [fetchedTask, setFechedTask] = useState<Tasks>([]);
+  const [fetchedTask, setFechedTask] = useState<TasksType>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchTask = useCallback(async () => {
@@ -23,7 +22,7 @@ export const TaskBox: FC = () => {
     void fetchTask();
   }, [fetchTask]);
 
-  const handleArchived = (id: Task['id']) => {
+  const handleArchived = (id: TaskType['id']) => {
     const index = fetchedTask.findIndex((task) => task.id === id);
     if (index >= 0) {
       fetchedTask[index].isArchived = !fetchedTask[index].isArchived;
@@ -32,7 +31,7 @@ export const TaskBox: FC = () => {
     }
   };
 
-  const handlePinned = (id: Task['id']) => {
+  const handlePinned = (id: TaskType['id']) => {
     const index = fetchedTask.findIndex((task) => task.id === id);
     if (index >= 0) {
       fetchedTask[id].isPinned = !fetchedTask[id].isPinned;
@@ -42,16 +41,11 @@ export const TaskBox: FC = () => {
   };
 
   return (
-    <>
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <TaskList
-          tasks={fetchedTask}
-          handleArchived={handleArchived}
-          handlePinned={handlePinned}
-        ></TaskList>
-      )}
-    </>
+    <TaskList
+      tasks={fetchedTask}
+      handleArchived={handleArchived}
+      handlePinned={handlePinned}
+      loading={isLoading}
+    ></TaskList>
   );
 };

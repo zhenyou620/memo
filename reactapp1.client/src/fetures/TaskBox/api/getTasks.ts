@@ -1,8 +1,8 @@
-import { Tasks } from '../types/Task';
+import { TasksType } from '../types/TaskType';
 import { httpError } from '@/utils/error';
 
-const isTasks = (data: unknown): data is Tasks => {
-  const tasks = data as Tasks;
+const isTasks = (data: unknown): data is TasksType => {
+  const tasks = data as TasksType;
 
   return tasks.every((task) => {
     return (
@@ -15,7 +15,7 @@ const isTasks = (data: unknown): data is Tasks => {
   });
 };
 
-export const getTasks = async (): Promise<Tasks> => {
+export const getTasks = async (): Promise<TasksType> => {
   const response = await fetch('api/GetTask', {
     method: 'GET',
   });
