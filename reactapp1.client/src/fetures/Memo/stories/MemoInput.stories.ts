@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import { MemoInput } from '../components/Input/MemoInput';
+import { MemoInput } from '../components/MemoInput';
 
 export const ActionsData = {
   handleChange: fn(),

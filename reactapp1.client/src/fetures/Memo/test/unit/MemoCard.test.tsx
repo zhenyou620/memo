@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { MemoCard } from '../../components/Card/MemoCard';
+import { MemoCard } from '../../components/MemoCard';
 import { MemoData } from './fixtures';
 import '@testing-library/jest-dom';
 

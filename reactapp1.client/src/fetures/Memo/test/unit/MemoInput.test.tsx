@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as postMemo from '../../api/postMemo';
-import { MemoInput } from '../../components/Input/MemoInput';
+import { MemoInput } from '../../components/MemoInput';
 import { httpError } from './fixtures';
 
 const user = userEvent.setup();

@@ -1,4 +1,4 @@
-import { MemoCard } from '../components/Card/MemoCard';
+import { MemoCard } from '../components/MemoCard';
 
 export default {
   component: MemoCard,

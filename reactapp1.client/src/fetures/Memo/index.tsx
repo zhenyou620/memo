@@ -8,10 +8,10 @@ import {
 } from 'react';
 import { getMemo } from './api/getMemo';
 import { postMemo } from './api/postMemo';
-import { MemoCard } from './components/Card/MemoCard';
+import { MemoCard } from './components/MemoCard';
 
-import { MemoInput } from './components/Input/MemoInput';
-import { Message } from './components/Message/Message';
+import { MemoInput } from './components/MemoInput';
+import { Message } from './components/Message';
 import { memoContext } from '@/fetures/Memo/stores/memoContext';
 
 export const Memo: FC = () => {

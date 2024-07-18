@@ -4,14 +4,14 @@ import { TaskList } from './components/TaskList';
 import { TaskType, TasksType } from './types/TaskType';
 
 export const TaskBox: FC = () => {
-  const [fetchedTask, setFechedTask] = useState<TasksType>([]);
+  const [tasks, setTasks] = useState<TasksType>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchTask = useCallback(async () => {
     try {
       setIsLoading(true);
       const data = await getTasks();
-      setFechedTask(data);
+      setTasks(data);
     } finally {
       setIsLoading(false);
     }
@@ -22,27 +22,25 @@ export const TaskBox: FC = () => {
     void fetchTask();
   }, [fetchTask]);
 
-  const handleArchived = (id: TaskType['id']) => {
-    const index = fetchedTask.findIndex((task) => task.id === id);
-    if (index >= 0) {
-      fetchedTask[index].isArchived = !fetchedTask[index].isArchived;
-      // eslint-disable-next-line no-void
-      void fetchTask();
-    }
-  };
+  const handleArchived = useCallback((id: TaskType['id']) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, isArchived: !task.isArchived } : task,
+      ),
+    );
+  }, []);
 
-  const handlePinned = (id: TaskType['id']) => {
-    const index = fetchedTask.findIndex((task) => task.id === id);
-    if (index >= 0) {
-      fetchedTask[id].isPinned = !fetchedTask[id].isPinned;
-      // eslint-disable-next-line no-void
-      void fetchTask();
-    }
-  };
+  const handlePinned = useCallback((id: TaskType['id']) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, isPinned: !task.isPinned } : task,
+      ),
+    );
+  }, []);
 
   return (
     <TaskList
-      tasks={fetchedTask}
+      tasks={tasks}
       handleArchived={handleArchived}
       handlePinned={handlePinned}
       loading={isLoading}

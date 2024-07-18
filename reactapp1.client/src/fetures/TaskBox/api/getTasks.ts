@@ -1,5 +1,4 @@
 import { TasksType } from '../types/TaskType';
-import { httpError } from '@/utils/error';
 
 const isTasks = (data: unknown): data is TasksType => {
   const tasks = data as TasksType;
@@ -21,7 +20,7 @@ export const getTasks = async (): Promise<TasksType> => {
   });
 
   if (!response.ok) {
-    throw httpError;
+    throw new Error('Failed to get task');
   }
 
   const data: unknown = await response.json();
