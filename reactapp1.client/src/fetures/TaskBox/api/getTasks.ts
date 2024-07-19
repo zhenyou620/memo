@@ -15,7 +15,7 @@ const isTasks = (data: unknown): data is TasksType => {
 };
 
 export const getTasks = async (): Promise<TasksType> => {
-  const response = await fetch('api/GetTask', {
+  const response = await fetch('/api/GetTask', {
     method: 'GET',
   });
 

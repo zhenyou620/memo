@@ -12,7 +12,7 @@ test('一覧アイテムが空の時、メッセージが表示される', () =>
   render(<MemoCard memos={[]}></MemoCard>);
   const card = screen.queryByRole('paragraph');
   expect(card).not.toBeInTheDocument();
-  expect(card).toBeNull();
+  expect(card).not.toBeInTheDocument();
   expect(
     screen.getByAltText('追加したメモはここに表示されます。'),
   ).toBeInTheDocument();

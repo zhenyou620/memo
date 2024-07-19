@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2022": true,
-    "jest/globals": true
+    "es2022": true
   },
   "extends": [
     "eslint:recommended",
@@ -125,22 +124,9 @@
       "rules": {
         "react/prop-types": "off"
       }
-    },
-    {
-      "files": [
-        "src/**/test/**/*.{js,jsx,ts,tsx}",
-        "src/**/*.{test,spec}.{js,jsx,ts,tsx}"
-      ],
-      "env": {
-        "jest/globals": true
-      },
-      "extends": [
-        "plugin:jest-dom/recommended",
-        "plugin:testing-library/react"
-      ]
     }
   ],
-  "ignorePatterns": ["vite.config.ts", "vitest.setup.ts" ],
+  "ignorePatterns": ["vite.config.ts", "vitest.setup.ts"],
   "settings": {
     "react": {
       "version": "detect"

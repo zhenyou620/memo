@@ -10,5 +10,7 @@ export default {
 export const Default = {
   args: {
     options: ['all', 'archived', 'pending'],
+    value: 'all',
+    label: 'filter',
   },
 };

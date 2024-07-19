@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get('api/GetTask', () => {
+  http.get('/api/GetTask', () => {
     return HttpResponse.json([
       { id: 1, text: 'Task1' },
       { id: 2, text: 'Task2', isArchived: true },
