@@ -5,7 +5,7 @@ import { TaskList } from './index.tsx';
 
 const meta: Meta<typeof TaskList> = {
   component: TaskList,
-  title: 'Task List',
+  title: 'Features/TaskBox/Task List',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import { Task } from '.';
 
 export default {
   component: Task,
-  title: 'Task',
+  title: 'Features/TaskBox/Task',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };

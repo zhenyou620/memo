@@ -2,7 +2,7 @@ import { TaskFilter } from '.';
 
 export default {
   component: TaskFilter,
-  title: 'TaskFilter',
+  title: 'Features/TaskBox/TaskFilter',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };

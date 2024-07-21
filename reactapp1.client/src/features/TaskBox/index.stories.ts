@@ -4,7 +4,7 @@ import { handlers } from '@/test/handlers';
 
 const meta: Meta<typeof TaskBox> = {
   component: TaskBox,
-  title: 'TaskBox',
+  title: 'Features/TaskBox/TaskBox',
   parameters: {
     msw: {
       handlers,
