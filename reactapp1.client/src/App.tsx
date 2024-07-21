@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Memo } from './fetures/Memo';
+import { Memo } from './features/Memo';
 import { MemoProvider } from './providers/MemoProvider';
 
 const App: FC = () => {

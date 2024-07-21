@@ -8,7 +8,7 @@ export const ActionsData = {
 
 export default {
   component: MemoInput,
-  title: 'MemoInput',
+  title: 'Features/Memo/MemoInput',
   excludeStories: /.*Data$/,
   args: {
     ...ActionsData,

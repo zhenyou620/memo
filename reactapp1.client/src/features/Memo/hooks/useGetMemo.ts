@@ -11,7 +11,7 @@ const useGetMemo = (memo: Memos): Memos => {
       setData(fetchedMemos);
     };
 
-    void fetchMemos();
+    fetchMemos().catch(console.log);
   }, [memo]);
 
   return data;

@@ -12,7 +12,7 @@ import { MemoCard } from './components/MemoCard';
 
 import { MemoInput } from './components/MemoInput';
 import { Message } from './components/Message';
-import { memoContext } from '@/fetures/Memo/stores/memoContext';
+import { memoContext } from '@/features/Memo/stores/memoContext';
 
 export const Memo: FC = () => {
   const { memo, updateMemo } = useContext(memoContext);

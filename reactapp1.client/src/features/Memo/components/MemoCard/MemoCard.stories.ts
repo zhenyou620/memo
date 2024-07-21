@@ -2,7 +2,7 @@ import { MemoCard } from '.';
 
 export default {
   component: MemoCard,
-  title: 'MemoCard',
+  title: 'Features/Memo/MemoCard',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };

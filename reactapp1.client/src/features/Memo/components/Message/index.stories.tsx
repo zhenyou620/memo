@@ -2,7 +2,7 @@ import { Message } from '.';
 
 export default {
   component: Message,
-  title: 'Message',
+  title: 'Features/Memo/Message',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };
