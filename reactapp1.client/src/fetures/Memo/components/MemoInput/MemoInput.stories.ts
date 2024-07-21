@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import { MemoInput } from '../components/MemoInput';
+import { MemoInput } from '.';
 
 export const ActionsData = {
   handleChange: fn(),
@@ -13,6 +13,7 @@ export default {
   args: {
     ...ActionsData,
   },
+  tags: ['autodocs'],
 };
 
 export const Default = {

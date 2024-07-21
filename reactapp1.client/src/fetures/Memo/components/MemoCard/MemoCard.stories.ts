@@ -1,9 +1,10 @@
-import { MemoCard } from '../components/MemoCard';
+import { MemoCard } from '.';
 
 export default {
   component: MemoCard,
   title: 'MemoCard',
   excludeStories: /.*Data$/,
+  tags: ['autodocs'],
 };
 
 export const Default = {
