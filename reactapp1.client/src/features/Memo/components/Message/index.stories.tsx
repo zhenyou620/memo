@@ -1,10 +1,14 @@
+import { Meta, StoryObj } from '@storybook/react';
 import { Message } from '.';
 
-export default {
+const meta: Meta<typeof Message> = {
   component: Message,
   title: 'Features/Memo/Message',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };
 
-export const Default = {};
+export default meta;
+type Story = StoryObj<typeof Message>;
+
+export const Default: Story = {};

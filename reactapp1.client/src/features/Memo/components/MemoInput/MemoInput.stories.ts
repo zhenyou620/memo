@@ -1,3 +1,4 @@
+import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { MemoInput } from '.';
 
@@ -6,7 +7,7 @@ export const ActionsData = {
   handleSubmit: fn(),
 };
 
-export default {
+const meta: Meta<typeof MemoInput> = {
   component: MemoInput,
   title: 'Features/Memo/MemoInput',
   excludeStories: /.*Data$/,
@@ -16,9 +17,11 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof MemoInput>;
+
+export const Default: Story = {
   args: {
-    id: 1,
     description: 'test',
   },
 };

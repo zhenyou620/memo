@@ -1,30 +1,36 @@
+import { Meta, StoryObj } from '@storybook/react';
 import { Task } from '.';
 
-export default {
+const meta: Meta<typeof Task> = {
   component: Task,
   title: 'Features/TaskBox/Task',
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
 };
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof Task>;
+
+const defaultTask = {
+  id: 1,
+  text: 'Test Task',
+};
+
+export const Default: Story = {
   args: {
-    task: {
-      id: 1,
-      text: 'Test Task',
-    },
+    task: defaultTask,
   },
 };
 
-export const Pinned = {
+export const Pinned: Story = {
   args: {
     task: {
-      ...Default.args.task,
+      ...defaultTask,
       isPinned: true,
     },
   },
 };
 
-export const Archived = {
-  args: { task: { ...Default.args.task, isArchived: true } },
+export const Archived: Story = {
+  args: { task: { ...defaultTask, isArchived: true } },
 };

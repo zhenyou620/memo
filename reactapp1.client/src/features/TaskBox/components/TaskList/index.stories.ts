@@ -1,6 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Meta, StoryObj } from '@storybook/react';
-import * as TaskStories from '../Task/index.stories.ts';
 import { TaskList } from './index.tsx';
 
 const meta: Meta<typeof TaskList> = {
@@ -19,22 +18,27 @@ const meta: Meta<typeof TaskList> = {
 export default meta;
 type Story = StoryObj<typeof TaskList>;
 
+const defaultTask = {
+  id: 1,
+  text: 'Test Task',
+};
+
 export const Default: Story = {
   args: {
     tasks: [
       {
-        ...TaskStories.Default.args.task,
+        ...defaultTask,
       },
       {
-        ...TaskStories.Default.args.task,
+        ...defaultTask,
         isArchived: true,
       },
       {
-        ...TaskStories.Default.args.task,
+        ...defaultTask,
         isPinned: true,
       },
       {
-        ...TaskStories.Default.args.task,
+        ...defaultTask,
         isArchived: true,
         isPinned: true,
       },
