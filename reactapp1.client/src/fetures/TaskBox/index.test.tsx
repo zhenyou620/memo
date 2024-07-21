@@ -116,5 +116,10 @@ describe('filter機能', () => {
     expect(taskList).toHaveLength(4);
 
     await user.selectOptions(filter, ['archived']);
+
+    expect(filter).toHaveValue('archived');
+
+    const updatedTaskList = await screen.findAllByRole('textbox');
+    expect(updatedTaskList).toHaveLength(2);
   });
 });
