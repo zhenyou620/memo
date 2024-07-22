@@ -1,4 +1,4 @@
-import { Memo } from '../types/memo';
+import { MemoType } from '../types/memoType';
 
 export const postMemo = async (description: string): Promise<void> => {
   if (description === '') {
@@ -7,7 +7,7 @@ export const postMemo = async (description: string): Promise<void> => {
 
   const newId = Math.floor(Math.random() * 10000);
 
-  const memo: Memo = {
+  const memo: MemoType = {
     id: newId,
     description,
   };

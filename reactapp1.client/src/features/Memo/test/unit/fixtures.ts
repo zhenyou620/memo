@@ -1,4 +1,4 @@
-import { Memos } from '../../types/memo';
+import { MemosType } from '../../types/memoType';
 import type { Result } from '../../types/result';
 
 export type HttpError = {
@@ -13,7 +13,7 @@ export const postMemoMock: Result = {
   result: 'ok',
 };
 
-export const MemoData: Memos = [
+export const MemoData: MemosType = [
   {
     id: 1,
     description:

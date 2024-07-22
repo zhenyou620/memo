@@ -20,5 +20,6 @@ export const Default: Story = {
   args: {
     ...ActionsData,
     items: ['Memo', 'Task'],
+    current: 'Memo',
   },
 };

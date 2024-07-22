@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getMemo } from '../api/getMemo';
-import { Memos } from '../types/memo';
+import { MemosType } from '../types/memoType';
 
-const useGetMemo = (memo: Memos): Memos => {
-  const [data, setData] = useState<Memos>([]);
+const useGetMemo = (memo: MemosType): MemosType => {
+  const [data, setData] = useState<MemosType>([]);
 
   useEffect(() => {
     const fetchMemos = async () => {

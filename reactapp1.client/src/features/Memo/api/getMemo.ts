@@ -1,8 +1,8 @@
 import { httpError } from '../../../utils/error';
-import { Memos } from '../types/memo';
+import { MemosType } from '../types/memoType';
 
-const isMemos = (data: unknown): data is Memos => {
-  const memos = data as Memos;
+const isMemos = (data: unknown): data is MemosType => {
+  const memos = data as MemosType;
 
   return memos.every((memos) => {
     return (
@@ -11,7 +11,7 @@ const isMemos = (data: unknown): data is Memos => {
   });
 };
 
-export const getMemo = async (): Promise<Memos> => {
+export const getMemo = async (): Promise<MemosType> => {
   const response = await fetch('api/Memos', {
     method: 'GET',
   });

@@ -1,13 +1,22 @@
-import { FC } from 'react';
-import { NavigationButton } from './NavigationButton.tsx';
+import { FC, useContext } from 'react';
+import {
+  navigationItemsType,
+  navigationItemType,
+} from '../../types/navigationItemsType';
+import { NavigationButton } from './components/NavigationButton';
+import { navigationContext } from '@/stores/navigationContext';
 
 export const Navigation: FC = () => {
-  const items = ['Memo', 'Task'];
-  const handleClick = () => {}
+  const { current, updateCurrent } = useContext(navigationContext);
+
+  const items: navigationItemsType = ['Memo', 'Task'];
+  const handleClick = (item: navigationItemType) => {
+    updateCurrent(item);
+  };
 
   return (
-    <div>
-      <NavigationButton {...{ items,  }} />
-    </div>
+    <nav>
+      <NavigationButton {...{ items, current, handleClick }} />;
+    </nav>
   );
 };

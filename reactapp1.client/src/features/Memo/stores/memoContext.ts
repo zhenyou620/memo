@@ -1,9 +1,9 @@
 import { createContext } from 'react';
-import { Memos } from '../types/memo';
+import { MemosType } from '../types/memoType';
 
 export interface MemoContext {
-  memo: Memos;
-  updateMemo: (memos: Memos) => void;
+  memo: MemosType;
+  updateMemo: (memos: MemosType) => void;
 }
 
 export const memoContext = createContext<MemoContext>({} as never);

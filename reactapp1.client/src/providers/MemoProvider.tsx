@@ -1,15 +1,15 @@
-import { FC, useState, PropsWithChildren, useCallback } from 'react';
+import { FC, useState, PropsWithChildren } from 'react';
 import { memoContext } from '../features/Memo/stores/memoContext';
-import { Memos } from '../features/Memo/types/memo';
+import { MemosType } from '../features/Memo/types/memoType';
 
 export const MemoProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [memo, setMemo] = useState<Memos>([]);
+  const [memo, setMemo] = useState<MemosType>([]);
 
-  const updateMemo = useCallback((memo: Memos) => {
+  const updateMemo = (memo: MemosType) => {
     if (memo) {
       setMemo(memo);
     }
-  }, []);
+  };
 
   return (
     <memoContext.Provider value={{ memo, updateMemo }}>
