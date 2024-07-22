@@ -16,7 +16,7 @@ export const Navigation: FC = () => {
 
   return (
     <nav>
-      <NavigationButton {...{ items, current, handleClick }} />;
+      <NavigationButton {...{ items, current, handleClick }} />
     </nav>
   );
 };

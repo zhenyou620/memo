@@ -1,19 +1,17 @@
 import { FC, useContext } from 'react';
 import { Memo } from './features/Memo';
+import { Navigation } from './features/Navigation';
 import { TaskBox } from './features/TaskBox';
-import { MemoProvider } from './providers/MemoProvider';
 import { navigationContext } from './stores/navigationContext';
 
 const App: FC = () => {
-  const { current, updateCurrent } = useContext(navigationContext);
+  const { current } = useContext(navigationContext);
 
   return (
-    <MemoProvider>
-      <div className="mx-8">
-        <Memo></Memo>
-        <TaskBox></TaskBox>
-      </div>
-    </MemoProvider>
+    <div className="mx-40 mt-10">
+      <Navigation />
+      <div className="mx-8">{current === 'Memo' ? <Memo /> : <TaskBox />}</div>
+    </div>
   );
 };
 

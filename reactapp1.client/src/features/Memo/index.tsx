@@ -6,6 +6,7 @@ import {
   useContext,
   useCallback,
 } from 'react';
+import { MemoProvider } from '@/providers/MemoProvider';
 import { getMemo } from './api/getMemo';
 import { postMemo } from './api/postMemo';
 import { MemoCard } from './components/MemoCard';
@@ -34,14 +35,15 @@ export const Memo: FC = () => {
     setDescription(e.target.value);
 
   useEffect(() => {
-    // eslint-disable-next-line no-void
-    void fetchMemo();
+    fetchMemo().catch(console.log);
   }, [fetchMemo]);
 
   return (
-    <>
-      <MemoInput {...{ description, handleChange, handleSubmit }} />
-      {memo.length > 0 ? <MemoCard memos={memo}></MemoCard> : <Message />}
-    </>
+    <MemoProvider>
+      <div className="flex flex-col items-center">
+        <MemoInput {...{ description, handleChange, handleSubmit }} />
+        {memo?.length > 0 ? <MemoCard memos={memo}></MemoCard> : <Message />}
+      </div>
+    </MemoProvider>
   );
 };
