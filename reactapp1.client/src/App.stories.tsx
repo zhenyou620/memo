@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Memo } from '.';
+import App from './App';
 import { handlers } from '@/test/handlers';
 
-const meta: Meta<typeof Memo> = {
-  component: Memo,
-  title: 'Features/Memo/Memo',
+const meta: Meta<typeof App> = {
+  component: App,
+  title: 'Pages/App',
   parameters: {
     msw: {
       handlers,
@@ -14,7 +14,6 @@ const meta: Meta<typeof Memo> = {
 };
 
 export default meta;
-
-type Story = StoryObj<typeof Memo>;
+type Story = StoryObj<typeof App>;
 
 export const Default: Story = {};
