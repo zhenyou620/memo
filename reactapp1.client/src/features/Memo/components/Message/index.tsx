@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Bulb } from '@/components/Bulb';
+import { Bulb } from '@/features/Memo/components/Message/Bulb';
 
 export const Message: FC = () => {
   return (

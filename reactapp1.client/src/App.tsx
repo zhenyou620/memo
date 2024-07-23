@@ -10,7 +10,9 @@ const App: FC = () => {
   return (
     <div className="mx-40 mt-10">
       <Navigation />
-      <div className="mx-8">{current === 'Memo' ? <Memo /> : <TaskBox />}</div>
+      <div className="mx-8 mt-8">
+        {current === 'Memo' ? <Memo /> : <TaskBox />}
+      </div>
     </div>
   );
 };
