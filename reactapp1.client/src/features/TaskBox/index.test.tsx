@@ -23,7 +23,7 @@ describe('タスク表示', () => {
 
   test('タスクが存在しない場合、タスクがない旨の画面が表示される', async () => {
     server.use(
-      http.get('api/GetTask', () => {
+      http.get('api/Tasks', () => {
         return HttpResponse.json([]);
       }),
     );
@@ -36,7 +36,7 @@ describe('タスク表示', () => {
 
   test('データ取得中にローディング画面が表示される', () => {
     server.use(
-      http.get('api/GetTask', async () => {
+      http.get('api/Tasks', async () => {
         await delay('infinite');
       }),
     );
@@ -49,7 +49,7 @@ describe('タスク表示', () => {
 
   test('ローディング画面が表示されたのち、タスク一覧が表示される', async () => {
     server.use(
-      http.get('api/GetTask', async () => {
+      http.get('api/Tasks', async () => {
         await delay(1000);
 
         return HttpResponse.json([

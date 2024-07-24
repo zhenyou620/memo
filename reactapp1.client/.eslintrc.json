@@ -124,7 +124,18 @@
       "rules": {
         "react/prop-types": "off"
       }
-    }
+    },    
+    {
+      "files": [
+        "src/**/test/**/*.{js,jsx,ts,tsx}",
+        "src/**/*.{test,spec}.{js,jsx,ts,tsx}"
+      ],
+      "rules": {    
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-argument": "off"
+      }
+    } 
   ],
   "ignorePatterns": ["vite.config.ts", "vitest.setup.ts"],
   "settings": {

@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
 import '../src/index.css';
-import '../app/globals.css';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 
 initialize();

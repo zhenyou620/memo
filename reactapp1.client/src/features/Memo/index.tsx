@@ -24,8 +24,9 @@ export const Memo: FC = () => {
     await fetchMemos();
   };
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) =>
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(e.target.value);
+  };
 
   useEffect(() => {
     fetchMemos().catch(console.log);
