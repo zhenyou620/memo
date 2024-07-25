@@ -35,7 +35,13 @@ export const Memo: FC = () => {
   return (
     <div className="flex flex-col items-center gap-4">
       <MemoInput {...{ description, handleChange, handleSubmit }} />
-      {memos?.length > 0 ? <MemoCard memos={memos}></MemoCard> : <Message />}
+      {memos?.length > 0 ? (
+        <MemoCard memos={memos}></MemoCard>
+      ) : (
+        <div className="mt-20">
+          <Message />
+        </div>
+      )}
     </div>
   );
 };
