@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
+import { vi } from 'vitest';
 import { Memo } from '.';
 import { server } from '@/test/node';
 
@@ -69,5 +70,26 @@ describe('メモ登録', () => {
     const newMemo = await screen.findByText('New memo');
 
     expect(newMemo).toBeInTheDocument();
+  });
+
+  test('空のメモは登録できない', async () => {
+    const postSpy = vi.fn();
+    server.use(
+      http.post('/api/memos', () => {
+        postSpy();
+
+        return HttpResponse.json({ status: 201 });
+      }),
+    );
+
+    render(<Memo />);
+
+    const input = screen.getByPlaceholderText('メモを入力...');
+    await user.type(input, '   ');
+    await user.tab();
+
+    await waitFor(() => {
+      expect(postSpy).not.toHaveBeenCalled();
+    });
   });
 });
